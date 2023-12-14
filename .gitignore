@@ -1,0 +1,20 @@
+# Ignorar archivos temporales
+*.tmp
+
+# Ignorar archivos de construcción
+build/
+
+# Ignorar archivos de configuración locales
+config.ini
+
+# Ignorar el codigo objeto
+*.o
+
+# Ignorar el codigo ejecutable
+*.bin
+
+# Ignorar las salvas de VIM
+*.swp
+
+# Ignorar las paginas de prueba
+*.html
