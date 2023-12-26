@@ -10,9 +10,9 @@
 typedef int SOCKET;
 const int LIMIT_CON = 100; // Set connection limit
 
-#include "Error.h"
-#include "SetSocket.h"  // port 80
-#include "http(1.0)Protocol.h"
+#include "headers/Error.h"
+#include "headers/SetSocket.h"  // port 80
+#include "headers/http(1.0)Protocol.h" // includes config.h AND typeOfFile.h
 
 
 int main(int argc, char* argv[])

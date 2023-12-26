@@ -1,0 +1,110 @@
+/* CSS3 acepta expresiones regulares como palabra clave */
+/*Para palabra clave se usa pclave */
+/*Para id se usa #id */
+/*Para clase se usa .class */
+/*Para clase especificando palabra clave  se usa pclave.class */
+
+/* Se puede usar un selector de atributo de la forma:
+  pclave[atributo] { }
+   Donde también se aceptan valores como:
+  pclave[atributo=valor] { }
+   CSS3 acepta expresiones regulares en 'valor'
+*/
+
+/* Selectores:
+   padre > pclave.class { } modifica al elemento de la derecha cuando tiene al de la derecha como padre
+   hermano + pclave.class {} modifica al elemento de la derecha inmediatamente sucesor de 'hermano' (posee el mismo padre)
+   hermano ~ pclave.class {} modifica a todos los elementos de la derecha que son sucesores de 'hermano' (posee el mismo padre)
+ */
+
+*{
+margin: 0px;
+padding: 0px;
+}
+
+h1 {
+font: bold 20px verdana, sans-serif;
+}
+h2 {
+font: bold 14px verdana, sans-serif;
+}
+
+/* Declarar como elementos de bloque*/
+header, section, footer, aside, nav, article, figure, figcaption,
+hgroup{
+display: block;
+}
+
+/* Centrar todo el cuerpo (elementos inline como texto e imágenes) de la página web */
+body {
+text-align: center;
+}
+
+/* Establecer el ancho de la caja, el margen y realinea los elementos inline dentro del div a la izquierda*/
+#agrupar {
+width: 960px;
+margin: 15px auto;
+text-align: left;
+}
+
+/* Modificar la cabecera del documento */
+#cabecera {
+background: #FFFBB9;
+border: 1px solid #999999;
+padding: 20 px;
+}
+
+/* Modificar la barra de navegación */
+#menu {
+background: #CCCCCC;
+padding: 5px 15px;
+}
+
+/* Los elementos inline-block no generan salto de linea pero permiten trabajarse como un elemento block y asi declarar un valor de ancho determinado */
+#menu li {
+display: inline-block;
+list-style: none;  /* Elimina el grafico generado para cada elemento de la lista */
+padding: 5px;
+font: bold 14px verdana, sans-serif;
+}
+
+/* Modificar la informacion principal */
+#seccion {
+float: left;  /* Mueve la caja a la izquerda tanto como sea posible */
+width: 660px;
+margin: 20px;
+}
+
+/* Modificar la barra lateral */
+#columna {
+float: left;
+width: 220px;
+margin: 20px 0px;
+padding: 20px;
+background: #CCCCCC;
+}
+
+/* Modificar la institucional */
+#pie {
+clear: both; /* Restaura el elemento del flujo modificado por float y empuja a las cajas, creando un modelo completo */
+text-align: center;
+padding: 20px;
+border-top: 2px solid #999999;
+}
+
+/* Toques finales */
+article {
+background: #FFFBCC;
+border: 1px solid #999999;
+padding: 20px;
+margin-bottom: 15px;
+}
+article footer {
+text-align: right;
+}
+time {
+color: #999999;
+}
+figcaption {
+font: italic 14px verdana, sans-serif;
+}

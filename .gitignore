@@ -5,10 +5,7 @@
 build/
 
 # Ignorar archivos de configuración locales
-config.ini
-
-# Ignorar el codigo objeto
-*.o
+# config.ini
 
 # Ignorar el codigo ejecutable
 *.bin
@@ -16,5 +13,3 @@ config.ini
 # Ignorar las salvas de VIM
 *.swp
 
-# Ignorar las paginas de prueba
-*.html
