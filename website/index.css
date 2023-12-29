@@ -1,22 +1,3 @@
-/* CSS3 acepta expresiones regulares como palabra clave */
-/*Para palabra clave se usa pclave */
-/*Para id se usa #id */
-/*Para clase se usa .class */
-/*Para clase especificando palabra clave  se usa pclave.class */
-
-/* Se puede usar un selector de atributo de la forma:
-  pclave[atributo] { }
-   Donde también se aceptan valores como:
-  pclave[atributo=valor] { }
-   CSS3 acepta expresiones regulares en 'valor'
-*/
-
-/* Selectores:
-   padre > pclave.class { } modifica al elemento de la derecha cuando tiene al de la derecha como padre
-   hermano + pclave.class {} modifica al elemento de la derecha inmediatamente sucesor de 'hermano' (posee el mismo padre)
-   hermano ~ pclave.class {} modifica a todos los elementos de la derecha que son sucesores de 'hermano' (posee el mismo padre)
- */
-
 *{
 margin: 0px;
 padding: 0px;
@@ -80,8 +61,17 @@ margin: 20px;
 float: left;
 width: 220px;
 margin: 20px 0px;
-padding: 20px;
 background: #CCCCCC;
+}
+
+#colorflush {
+ margin: 10px 10px;
+ padding: 5px;
+ background: #000000;
+ text-align: center;
+ text-decoration: underline;
+ text-shadow: 5px 0px 4px;
+ color: red;
 }
 
 /* Modificar la institucional */
