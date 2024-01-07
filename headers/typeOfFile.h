@@ -9,13 +9,19 @@ const char EXTENSIONES[][5]=
  {"js"},
  {"txt"},
  // BINARY
+  // Audio
  {"mp3"},
+  // Image
  {"jpg"},
  {"jpeg"},
+ {"webp"},
+ {"png"},
+ {"gif"},
+  // Video
  {"webm"},
  {"ogg"},
  {"mp4"},
- {"gif"}
+ {"3gp"}
 };
 const int NUM_EXTENSIONES = 11;
 TYPE Typeof(std::string extension)
