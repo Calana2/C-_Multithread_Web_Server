@@ -9,7 +9,7 @@
 // Constants
 const int KB = 1024;
 const std::string badResponse = "HTTP/1.0 404 Not Found\r\nContent-Length: 0\r\n\r\n";
-const std::string siteName = "website/" + getName();
+const std::string siteName = std::filesystem::current_path().string()+"/website/" + getName();
 
 
 
@@ -25,7 +25,7 @@ void HTTP_PROTOCOL_(SOCKET& cliente);                                           
 void HTTP_PROTOCOL_(SOCKET& cliente)
 {
  std::string response;                            // DOCUMENT
- char buffer[KB*8] = {0};                         // DOCUMENT_SIZE_MAX
+ char buffer[KB*64] = {0};                         // DOCUMENT_SIZE_MAX
  int lectura = recv(cliente, buffer, KB*8, 0);    // Message length
  if(lectura <= 0)
  { 
@@ -133,10 +133,20 @@ void HTTP_PROTOCOL_(SOCKET& cliente)
   for(;container[0].name[index] != ' ';index++){
     name+=container[0].name[index];                                        // name of the requested file
   }
-  name = "website/" + name;                                                // adding the route
-  std::string extension = name.substr(name.find('.')+1,name.length()-1);   // .extension
- 
+  name = std::filesystem::current_path().string()+"/website/" + name;       // adding the route
 
+  // Getting the extension
+  std::string extension; 
+  int dotPos= name.find('.');
+  if(dotPos != std::string::npos){
+   extension = name.substr(dotPos+1);
+  } else {
+   if(name != std::filesystem::current_path().string()+"/website/"){
+    extension = "html";  // Asumir que es html un archivo sin extension 
+    name=name+"."+extension;
+   }
+  }
+  std::cout<<name<<std::endl;
 
 // For binary files
 if(Typeof(extension) == BINARY)
@@ -189,7 +199,7 @@ else
   {
    std::ifstream file;
    std::string tipo;
-   if(name == "website/"){
+   if(name == std::filesystem::current_path().string()+"/website/"){
     file.open(siteName.c_str());
     tipo="text/html";
    } else {

@@ -6,9 +6,10 @@
 #include <thread>       // FOR std::thread()
 #include <fstream>      // FOR std::iostream AND std::ofstream
 #include <sstream>      // FOR std::stringstream
+#include <filesystem>
 
 typedef int SOCKET;
-const int LIMIT_CON = 100; // Set connection limit
+const int LIMIT_CON = 10000; // Set connection limit
 
 #include "headers/Error.h"
 #include "headers/SetSocket.h"  // port 80
@@ -61,9 +62,9 @@ try
 
      numberConnections++;
     /***____ Client handler here___***/
-     std::thread t(HTTP_PROTOCOL_,std::ref(nuevoSocket));
-     t.detach();
-      
+ //    std::thread t(HTTP_PROTOCOL_,std::ref(nuevoSocket));
+ //    t.detach();
+    HTTP_PROTOCOL_(nuevoSocket);   
    }while( numberConnections < LIMIT_CON);
 }
   // CATCH FOR SOCKET ERRORS
