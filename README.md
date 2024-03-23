@@ -29,3 +29,9 @@ You need a C++ compiler, try:
 g++ main.cpp -o server.bin || clang++ -o server.bin
 
 
+Then just type:
+
+
+./server.bin
+
+

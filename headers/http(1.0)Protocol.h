@@ -25,7 +25,7 @@ void HTTP_PROTOCOL_(SOCKET& cliente);                                           
 void HTTP_PROTOCOL_(SOCKET& cliente)
 {
  std::string response;                            // DOCUMENT
- char buffer[KB*64] = {0};                         // DOCUMENT_SIZE_MAX
+ char buffer[KB*512] = {0};                       // DOCUMENT_SIZE_MAX
  int lectura = recv(cliente, buffer, KB*8, 0);    // Message length
  if(lectura <= 0)
  { 

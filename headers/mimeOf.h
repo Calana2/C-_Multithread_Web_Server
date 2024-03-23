@@ -2,6 +2,7 @@
 #define MIMEOF_H
 
 std::string mimeOf(std::string extension){
+// yes, i should be used a switch
  std::string type;
  if(extension == "mp3")
   type = "audio/mp3";      
